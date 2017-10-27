@@ -20,6 +20,7 @@ func (p *Proxy) New() http.Handler {
 
 func (p *Proxy) upstreamHost(handler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("%s %s %s\n", r.RemoteAddr, r.Method, r.URL)
 		r.Header.Set("Authorization", p.authorizationHeader)
 		r.Host = r.URL.Host
 		handler.ServeHTTP(w, r)
