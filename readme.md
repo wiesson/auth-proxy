@@ -3,9 +3,7 @@
 ### Install
 
 ```
-go get github.com/wiesson/auth-proxy
-cd $GOPATH/src/github.com/wiesson/auth-proxy
-go install
+go install github.com/wiesson/auth-proxy
 ```
 
 ### arguments
